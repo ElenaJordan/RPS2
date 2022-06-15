@@ -6,7 +6,7 @@ var playerResultsTable = document.getElementById("resultstable1");
 var cpuResultsTable = document.getElementById("resultstable2");
 var playerResultsTotal = 0;
 var cpuResultsTotal = 0;
-var wholePage = document.getElementById("body");
+var endCard = document.getElementById("endcard");
 const winString = "Congrats, you've pushed back the computers and won for humanity or some shit.";
 const loseString = "You lose... Submit to your new robot overlords or some shit";
 
@@ -109,11 +109,9 @@ function ReplaceResultsTable() {
 
 function WinChecker() {
     if (playerResultsTotal == 5) {
-        while (wholePage.firstChild) wholePage.removeChild(wholePage.lastChild);
-        wholePage.appendChild(winString);
+        endCard.innerHTML = winString;
     } else if (cpuResultsTotal == 5) {
-        while (wholePage.firstChild) wholePage.removeChild(wholePage.lastChild);
-        wholePage.appendChild(loseString);
+        endCard.innerHTML = loseString;
     }
 }
 
